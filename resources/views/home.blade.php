@@ -21,5 +21,4 @@
 <section class="cta text-center">
 	<!--CTA-->
 	@include("site.call-to-action")		
-</section>		
-		
+</section>
