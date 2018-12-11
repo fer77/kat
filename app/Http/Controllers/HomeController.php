@@ -20,7 +20,7 @@ class HomeController extends Controller
             $client = new \GuzzleHttp\Client();
             return json_decode($client->request('GET', 'https://openapi.etsy.com/v2/shops/DelicateKnots/listings/active?includes=MainImage&api_key=63vqkzj9hsao80veqppsy8f4')->getBody())->results;
         });
-        
+
         return view('home', compact('shop_items'));
     }
 
