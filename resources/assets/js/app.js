@@ -29,5 +29,8 @@ const app = new Vue({
 */
 
 $(window).bind("load", function() {
-    var filterizd = $('.filtr-container').filterizr({filter: 'all'});
+    var filterizd = $('.filtr-container');
+    filterizd.filterizr({
+        filter: 'all',
+    });
  });

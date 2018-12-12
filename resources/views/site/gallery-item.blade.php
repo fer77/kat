@@ -2,7 +2,7 @@
 <div class="col-sm-6 col-md-6 col-lg-4 col-gallery filtr-item" data-category="1" data-sort="value">
     <figcaption>
         <div class="parent">
-            <img src="{{ $item->MainImage->url_570xN }}" class="img-fluid">
+            <img src="{{ $item->MainImage->url_570xN }}" />
                 <div class="child ">
                 <h3>{{ $item->title }}</h3>
                 <p>{{ $item->description }}</p>
