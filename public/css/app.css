@@ -10915,8 +10915,7 @@ li.nav-item .btn-white {
 }
 
 .cover {
-  background: #252629 url("https://placeimg.com/640/480/any") center;
-  background-size: cover;
+  background-color: #696b6e;
   min-height: 40rem;
   height: auto;
   border-radius: 0;
