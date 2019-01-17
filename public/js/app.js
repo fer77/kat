@@ -13925,7 +13925,7 @@ window.Vue = __webpack_require__(40);
 Vue.component('example-component', __webpack_require__(43));
 
 var app = new Vue({
-  el: '#app'
+    el: '#app'
 });
 
 /**
@@ -13933,7 +13933,10 @@ var app = new Vue({
 */
 
 $(window).bind("load", function () {
-  var filterizd = $('.filtr-container').filterizr({ filter: 'all' });
+    var filterizd = $('.filtr-container');
+    filterizd.filterizr({
+        filter: 'all'
+    });
 });
 
 /***/ }),

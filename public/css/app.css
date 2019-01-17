@@ -10626,6 +10626,14 @@ body.chocolat-open > .chocolat-content {
 }
 */
 
+.gallery .col-gallery img {
+  height: 476px;
+}
+
+.child p {
+  padding: 0 2em;
+}
+
 body {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -10907,8 +10915,7 @@ li.nav-item .btn-white {
 }
 
 .cover {
-  background: #252629 url("https://placeimg.com/640/480/any") center;
-  background-size: cover;
+  background-color: #696b6e;
   min-height: 40rem;
   height: auto;
   border-radius: 0;
