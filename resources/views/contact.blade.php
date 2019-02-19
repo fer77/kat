@@ -28,52 +28,42 @@
 </section> -->
 
 <div class="container contact-form" style="margin-top:100px">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    @if (session('warning'))
-                        <div class="alert alert-warning">
-                            {{ session('warning') }}
-                        </div>
-                    @endif
-            
-            <form method="post" action="{{ route('contactus.store') }}">
+	<div class="container">
+	<form class="contact-form mt-4" method="post" action="{{ route('contactus.store') }}">
 			    {{ csrf_field() }}
-                <h3>Contact Us</h3>
-               <div class="row">
+                <h2 class="pb-4 text-center">Contact Us</h2>
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name *"  required />
+						<input type="text" class="form-control-custom mb-4" placeholder="Name" value="">
 				 @if ($errors->has('name'))
-										<span class="help-block">
-											<strong>{{ $errors->first('name') }}</strong>
-										</span>
+					<span class="help-block">
+						<strong>{{ $errors->first('name') }}</strong>
+					</span>
 				 @endif
                         </div>
                         <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                            <input type="email" name="email" class="form-control" placeholder="Your Email *"  required />
+						<input type="text" class="form-control-custom mb-4" placeholder="Email address" value="">
 							 @if ($errors->has('email'))
-										<span class="help-block">
-											<strong>{{ $errors->first('email') }}</strong>
-										</span>
+								<span class="help-block">
+									<strong>{{ $errors->first('email') }}</strong>
+								</span>
 							 @endif
                         </div>
-                        <div class="form-group {{ $errors->has('subject') ? ' has-error' : '' }}">
+                        <!-- <div class="form-group {{ $errors->has('subject') ? ' has-error' : '' }}">
                             <input type="text" name="subject" class="form-control" placeholder="Subject *"  />
 							@if ($errors->has('subject'))
 										<span class="help-block">
 											<strong>{{ $errors->first('subject') }}</strong>
 										</span>
 							 @endif
-                        </div>
+                        </div> -->
+						<textarea class="form-control-custom mb-4" rows="3" placeholder="Your Message"></textarea><br />
                         <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btn btn-primary btn-round btn-sm" value="Send Message" />
+                            <input type="submit" name="btnSubmit" class="btn btn-primary btn-md pill-btn mb-4" value="Send Message" />
 							
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <div class="form-group {{ $errors->has('message') ? ' has-error' : '' }}">
                             <textarea name="message" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;" required></textarea>
 			     @if ($errors->has('message'))
@@ -82,7 +72,8 @@
 				</span>
 			    @endif
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </form>
+	</div>
 </div>
