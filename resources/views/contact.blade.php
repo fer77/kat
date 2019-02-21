@@ -12,7 +12,6 @@
 		
 <!--Contact-->
 <section id="contact" class="contact">
-	<a name="contact"></a>
 	<h2 class="pb-4 text-center">Contact Us</h2>
 	<div class="container">
 		<div class="row contact-details">
