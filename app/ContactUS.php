@@ -8,7 +8,6 @@ class ContactUS extends Model
 {
     public $table = 'contact_us';
 	 
-    // public $fillable = ['name','email','subject','message'];
     public $fillable = ['name','email','message'];
 	 
 }

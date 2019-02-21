@@ -12,8 +12,5 @@
 */
 
 Route::resource('/', 'HomeController');
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
 Route::get('/contact', 'ContactUSController@contactUS');
 Route::post('/contact', ['as'=>'contactus.store','uses'=>'ContactUSController@contactSaveData']);
