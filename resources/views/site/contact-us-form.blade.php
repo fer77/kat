@@ -1,18 +1,21 @@
-<h3>Ask us a question</h3>
-<form class="contact-form mt-4">
+<form method="post" action="{{ route('contactus.store') }}">
+    {{ csrf_field() }}
     <div class="row">
         <div class="col-md-5">
-            <input type="text" class="form-control-custom mb-4" placeholder="Name" value="">
+            <div class="form-group">
+                <input type="text" name="name" class="form-control-custom mb-4" placeholder="Your Name"  required />
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control-custom mb-4" placeholder="Email address"  required />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary btn-md pill-btn mb-4" type="submit" name="btnSubmit" value="Send Message" />
+            </div>
         </div>
-        <div class="col-md-5">
-            <input type="text" class="form-control-custom mb-4" placeholder="Email address" value="">
+        <div class="col-md-6">
+            <div class="form-group">
+                <textarea class="form-control-custom mb-4" name="message" placeholder="Your Message" style="width: 100%; height: 150px;" required></textarea>
+            </div>
         </div>
-        <br />
-    </div>
-    <div class="row">
-        <div class="col-md-10">
-            <textarea class="form-control-custom mb-4" rows="3" placeholder="Your Message"></textarea><br />
-            <button type="submit" class="btn btn-primary btn-md pill-btn mb-4">Send Message</button>
-        </div> 
     </div>
 </form>
