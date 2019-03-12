@@ -1,24 +1,23 @@
-@extends("layouts.site-master")
+@extends('layouts.app')
 
-<section class="cover text-center">
-	@include("site.nav")
-	@include("site.hero")
-</section>
-		
-<section id="portfolio" class="gallery text-center">
-	<div class="container-fluid">
-		<a name="gallery"></a>
-		<h2 class="mb-4">Our Work</h2>
-		
-		<!--Gallery Filter-->
-		@include("site.gallery-filter")
-	
-		<!--Gallery-->
-		@include("site.gallery")
-	</div>
-</section>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-<section class="cta text-center">
-	<!--CTA-->
-	@include("site.call-to-action")		
-</section>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
