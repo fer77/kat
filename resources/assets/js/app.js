@@ -10,7 +10,7 @@ require('./tether.min');
 require('./chocolat.min');
 require('./jquery.filterizr.min')
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -18,11 +18,11 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });
 
 /**
 *Filterizr is a jQuery plugin that sorts, shuffles, searches and applies stunning filters over *responsive galleries using CSS3 transitions. 
@@ -33,4 +33,25 @@ $(window).bind("load", function() {
     filterizd.filterizr({
         filter: 'all',
     });
- });
+});
+
+$(document).ready(function() {
+    var wLoc = window.location.pathname + window.location.hash;
+
+    $('.nav-item').removeClass('active');
+    $('a[data-href="' + wLoc + '"]').parent().addClass('active');
+    
+    $('.nav-item a').click(function() {
+        wLoc = $(this).attr('data-href');
+
+        $('.nav-item').removeClass('active');
+        
+        if (wLoc == '/') {
+            window.location.href = '/';
+        } else {
+            window.location.href = wLoc;
+
+            $('a[data-href="' + wLoc + '"]').parent().addClass('active');
+        }
+    });
+});
