@@ -12,8 +12,8 @@
 */
 
 Route::resource('/', 'HomeController');
-Route::get('/contact', 'ContactUSController@contactUS');
-Route::post('/contact', ['as'=>'contactus.store','uses'=>'ContactUSController@contactSaveData']);
+Route::resource('/contact', 'ContactUSController');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// create authenticated area with admin controlls.
+// research object oriented php.

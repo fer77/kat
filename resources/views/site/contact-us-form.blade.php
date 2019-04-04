@@ -1,4 +1,4 @@
-<form method="post" action="{{ route('contactus.store') }}">
+<form method="post" action="/contact">
     {{ csrf_field() }}
     <div class="row">
         <div class="col-md-5">
