@@ -11,9 +11,12 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::resource('/', 'HomeController');
 Route::resource('/contact', 'ContactUSController');
+
 Auth::routes();
 
-// create authenticated area with admin controlls.
-// research object oriented php.
+Route::get('/home', 'HomeController@index')->name('home');

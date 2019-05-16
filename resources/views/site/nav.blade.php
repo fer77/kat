@@ -1,36 +1,42 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
 	<div class="container">
-		<a class="navbar-brand" href="#">Macrameconomics</a>
+		<a class="navbar-brand" href="/">Macrameconomics</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbar">
 			<ul class="navbar-nav mt-2 mt-md-0">
-				<li class="nav-item active">
-					<a id="js-home" class="nav-link" data-href="/">Home <span class="sr-only">(current)</span></a>
+				<li class="nav-item">
+					<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a id="js-portfolio" class="nav-link" data-href="/#portfolio">Portfolio</a>
+					<a class="nav-link" href="/#portfolio">Portfolio</a>
 				</li>
 				<li class="nav-item">
-					<a id="js-about" class="nav-link" data-href="/contact/#about">About</a>
+					<a class="nav-link" href="/contact/#about">About</a>
 				</li>
 				<li class="nav-item">
-					<a id="js-contact" class="nav-link" data-href="/contact/#contact">Contact Us</a>
+					<a class="nav-link" href="/contact/#contact">Contact Us</a>
 				</li>
-			@guest
-				<li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-				<li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-			@else
+				<!-- Authentication Links -->
+				@guest
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+				</li>
+				@if (Route::has('register'))
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+				</li>
+				@endif
+				@else
 				<li class="nav-item dropdown">
-					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						{{ Auth::user()->name }} <span class="caret"></span>
 					</a>
 
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="{{ route('logout') }}"
-							onclick="event.preventDefault();
-											document.getElementById('logout-form').submit();">
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
 							{{ __('Logout') }}
 						</a>
 
@@ -39,11 +45,11 @@
 						</form>
 					</div>
 				</li>
-			@endguest
+				@endguest
 			</ul>
-			<div class="search-field">
+			<!-- <div class="search-field">
 				<input type="search" value="Search">
-			</div>
+			</div> -->
 		</div>
 	</div>
 </nav>

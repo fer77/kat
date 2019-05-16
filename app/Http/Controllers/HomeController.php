@@ -12,19 +12,20 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
         $shop_items = Cache::remember('storeItems', 30, function () {
+
             $api_key = env('ETSY_KEY');
             $client = new \GuzzleHttp\Client();
             return json_decode($client->request('GET', 'https://openapi.etsy.com/v2/shops/DelicateKnots/listings/active?includes=MainImage&api_key=' . $api_key)->getBody())->results;
