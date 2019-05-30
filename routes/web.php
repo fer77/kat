@@ -11,9 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::resource('/', 'HomeController');
 Route::resource('/contact', 'ContactUSController');
 
