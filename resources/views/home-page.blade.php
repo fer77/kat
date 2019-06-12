@@ -1,10 +1,5 @@
 @extends("layouts.site-master")
-
-<section class="cover text-center">
-	@include("site.nav")
-	@include("site.hero")
-</section>
-
+@section("content")
 <section id="portfolio" class="gallery text-center">
 	<div class="container-fluid">
 		<a name="gallery"></a>
@@ -22,3 +17,4 @@
 	<!--CTA-->
 	@include("site.call-to-action")
 </section>
+@endsection
