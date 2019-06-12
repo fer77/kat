@@ -17,17 +17,13 @@
 </head>
 
 <body>
-    @include("site.nav")
     @include("site.modal")
-    @if (Route::has('register'))
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                @yield('content')
-            </div>
-        </div>
-    </div>
-    @endif
+    <section class="cover text-center">
+        @include("site.nav")
+        @include("site.hero")
+    </section>
+    @yield('content')
+    
     @include("site.footer")
 
     @if ($errors->any())
