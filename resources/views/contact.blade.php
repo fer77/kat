@@ -1,10 +1,5 @@
 @extends("layouts.site-master")
-
-<section class="cover text-center">
-	@include("site.nav")
-	@include("site.hero")
-</section>
-
+@section("content")
 <!--Team-->
 <section id="about" class="team text-center">
 	@include("site.bio")
@@ -25,3 +20,4 @@
 		</div>
 	</div>
 </section>
+@endsection
