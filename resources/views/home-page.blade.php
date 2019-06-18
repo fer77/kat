@@ -1,4 +1,4 @@
-@extends("layouts.site-master")
+@extends("layouts.site")
 @section("content")
 <section id="portfolio" class="gallery text-center">
 	<div class="container-fluid">

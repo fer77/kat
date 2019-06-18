@@ -1,4 +1,4 @@
-@extends("layouts.site-master")
+@extends("layouts.site")
 @section("content")
 <!--Team-->
 <section id="about" class="team text-center">
