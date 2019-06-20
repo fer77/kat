@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="admin container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="login col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

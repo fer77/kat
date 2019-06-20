@@ -18,13 +18,17 @@
 
 <body>
     @if (Route::has('register'))
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12"> -->
+                <div class="gray-cover">
+                @include("site.nav")
                 @yield('content')
-            </div>
+                @include("site.footer")
+                </div>
+            <!-- </div>
         </div>
-    </div>
+    </div> -->
     @endif
     @if ($errors->any())
     <div class="alert alert-danger">

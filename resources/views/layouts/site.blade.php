@@ -18,7 +18,7 @@
 
 <body>
     @include("site.modal")
-    <section class="cover text-center">
+    <section class="cover gray-cover text-center">
         @include("site.nav")
         @include("site.hero")
     </section>
