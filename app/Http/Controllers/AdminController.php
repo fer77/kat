@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class AdminController extends Controller
 {
@@ -17,11 +18,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $shop_items = Cache::remember('storeItems', 30, function () {
+            $api_key = env('ETSY_KEY');
+            $client = new \GuzzleHttp\Client();
+            return json_decode($client->request('GET', 'https://openapi.etsy.com/v2/shops/DelicateKnots/listings/active?includes=MainImage&api_key=' . $api_key)->getBody())->results;
+        });
+        return view('admin.dashboard', compact('shop_items'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource.\
      *
      * @return \Illuminate\Http\Response
      */
@@ -49,7 +55,11 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $api_key = env('ETSY_KEY');
+        $client = new \GuzzleHttp\Client();
+        $shop_item = json_decode($client->request('GET', 'https://openapi.etsy.com/v2/listings/' . $id . '?includes=MainImage&api_key=' . $api_key)->getBody())->results;
+        // dd($shop_item);
+        return view('admin.listing', compact('shop_item'));
     }
 
     /**
