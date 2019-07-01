@@ -11,9 +11,19 @@
 |
 */
 
+// Auth::routes();
 Route::resource('/', 'HomeController');
+
 Route::resource('/contact', 'ContactUSController');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->group(function () {
+    Auth::routes();
+
+    Route::redirect('register', 'login', 301);
+
+    Route::resource('/dashboard', 'AdminController');
+    
+    Route::get('/dashboard/{$id}', 'AdminController@show');
+});
